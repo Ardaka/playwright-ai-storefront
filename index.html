@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Nova Store demo application for Playwright tests" />
+    <title>Nova Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <header class="nav">
+      <a class="brand" href="#">NOVA<span>.</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#products">Shop</a>
+        <a href="#about">About</a>
+      </nav>
+      <button class="cart-button" data-testid="cart-button" aria-label="Open cart">
+        Bag <span data-testid="cart-count">0</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow">AUTUMN / 2026</p>
+        <h1>Objects for<br /><em>better focus.</em></h1>
+        <p class="hero-copy">A small collection of calm, useful things for your everyday workspace.</p>
+        <a class="hero-link" href="#products">Explore the collection ↓</a>
+      </section>
+
+      <section class="catalog" id="products">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">CURATED ESSENTIALS</p>
+            <h2>Desk collection</h2>
+          </div>
+          <label class="search">
+            <span>Search</span>
+            <input data-testid="search-input" type="search" placeholder="Try “lamp”" />
+          </label>
+        </div>
+        <div class="product-grid" data-testid="product-grid" aria-live="polite"></div>
+        <p class="empty-state" data-testid="empty-state" hidden>No objects match that search.</p>
+      </section>
+
+      <section class="about" id="about">
+        <p class="eyebrow">WHY NOVA</p>
+        <p>Considered design, honest materials, and just enough technology.</p>
+      </section>
+    </main>
+
+    <dialog class="cart" data-testid="cart-dialog">
+      <div class="cart-head">
+        <div><p class="eyebrow">YOUR SELECTION</p><h2>Shopping bag</h2></div>
+        <button data-testid="close-cart" aria-label="Close cart">×</button>
+      </div>
+      <div data-testid="cart-items" class="cart-items"></div>
+      <p class="cart-empty" data-testid="cart-empty">Your bag is waiting.</p>
+      <div class="cart-footer">
+        <p>Total <strong data-testid="cart-total">$0.00</strong></p>
+        <button class="checkout" data-testid="checkout-button">Checkout</button>
+      </div>
+    </dialog>
+
+    <div class="toast" data-testid="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="/src/app.js"></script>
+  </body>
+</html>
+

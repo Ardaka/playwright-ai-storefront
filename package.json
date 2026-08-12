@@ -1,0 +1,26 @@
+{
+  "name": "playwright-ai-storefront",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Portfolio-ready Playwright UI automation project with an AI-assisted workflow.",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit",
+    "test": "playwright test",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.62.1",
+    "@types/node": "26.2.0",
+    "typescript": "7.0.2",
+    "vite": "8.2.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
+
